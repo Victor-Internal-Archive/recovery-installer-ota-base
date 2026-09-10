@@ -8,7 +8,7 @@ set -e
 # Hidden env vars:
 # 1. AUTO_UPDATE: set to 1 if you want to inhibit the -au interaction
 
-CREATOR="Wire"
+CREATOR="EmilyandSkittl"
 
 CURRENT_CONTAINER_NAME="vic-yocto-builder-7"
 
@@ -61,10 +61,10 @@ function check_sign_ota() {
 
 function check_submodules() {
 	BAD_SUBMODULE=0
-	if [[ ! -d anki/victor/engine ]]; then
-		errorMsg "The anki/victor submodule doesn't exist."
-		BAD_SUBMODULE=1
-	fi
+	#if [[ ! -d anki/victor/engine ]]; then
+	#	errorMsg "The anki/victor submodule doesn't exist."
+	#	BAD_SUBMODULE=1
+	#fi
 	if [[ ! -d poky/openembedded-core/meta ]]; then
 		errorMsg "The poky/openembedded-core submodule doesn't exist."
 		BAD_SUBMODULE=1
@@ -73,14 +73,14 @@ function check_submodules() {
 		errorMsg "The poky/meta-openembedded submodule doesn't exist."
 		BAD_SUBMODULE=1
 	fi
-	if [[ ! -d external/purplpkg/bash ]]; then
-		errorMsg "The external/purplpkg submodule doesn't exist."
-		BAD_SUBMODULE=1
-	fi
-	if [[ ! -d anki/wired/webroot ]]; then
-		errorMsg "The anki/wired submodule doesn't exist."
-		BAD_SUBMODULE=1
-	fi
+	#if [[ ! -d external/purplpkg/bash ]]; then
+	#	errorMsg "The external/purplpkg submodule doesn't exist."
+	#	BAD_SUBMODULE=1
+	#fi
+	#if [[ ! -d anki/wired/webroot ]]; then
+	#	errorMsg "The anki/wired submodule doesn't exist."
+	#	BAD_SUBMODULE=1
+	#fi
 	if [[ ${BAD_SUBMODULE} == 1 ]]; then
 		errorMsg "Please configure your submodules properly."
 		exit 1
@@ -160,7 +160,7 @@ fi
 
 check_submodules
 
-is_victor_there_and_compatible
+#is_victor_there_and_compatible
 
 if [[ "$BOT_TYPE" != "oskr" && "$BOT_TYPE" != "dev" && "$BOT_TYPE" != "prod" && "$BOT_TYPE" != "devcloudless" ]]; then
     usage "BOT_TYPE (-bt) should be 'oskr' or 'dev', got: $BOT_TYPE"
