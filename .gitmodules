@@ -20,3 +20,6 @@
 [submodule "external/purplpkg"]
 	path = external/purplpkg
 	url = https://github.com/purpl-org/purplpkg
+[submodule "anki/recovery-installer"]
+	path = anki/recovery-installer
+	url = https://github.com/Victor-Internal-Archive/wireos-recovery-installer
