@@ -29,7 +29,7 @@ IMAGE_INSTALL += "openssl-bin"
 IMAGE_INSTALL += "emr-cat"
 IMAGE_INSTALL += "wpa-supplicant"
 IMAGE_INSTALL += "extra-conf"
-IMAGE_INSTALL += "update-engine"
+#IMAGE_INSTALL += "update-engine"
 IMAGE_INSTALL += "bash"
 #IMAGE_INSTALL += "python3"
 IMAGE_INSTALL += "libgomp"
@@ -68,7 +68,7 @@ IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'net-tools', d)
 IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'util-linux-dmesg', d)}"
 
 # skittle
-IMAGE_INSTALL += "purplpkg"
+#IMAGE_INSTALL += "purplpkg"
 
 # want some debug tools?
 #IMAGE_INSTALL += "gdb"

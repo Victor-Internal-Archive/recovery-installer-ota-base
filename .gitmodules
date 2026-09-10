@@ -1,13 +1,7 @@
-[submodule "anki/victor"]
-	path = anki/victor
-	url = https://github.com/os-vector/wire-os-victor
 [submodule "poky/meta-openembedded"]
 	path = poky/meta-openembedded
 	url = https://github.com/openembedded/meta-openembedded
 	branch = whinlatter
-[submodule "anki/wired"]
-	path = anki/wired
-	url = https://github.com/os-vector/wired
 [submodule "anki/vic-cloudless"]
 	path = anki/vic-cloudless
 	url = https://github.com/kercre123/vic-cloudless
@@ -17,9 +11,6 @@
 [submodule "poky/openembedded-core"]
 	path = poky/openembedded-core
 	url = https://github.com/openembedded/openembedded-core.git
-[submodule "external/purplpkg"]
-	path = external/purplpkg
-	url = https://github.com/purpl-org/purplpkg
 [submodule "anki/recovery-installer"]
 	path = anki/recovery-installer
 	url = https://github.com/Victor-Internal-Archive/wireos-recovery-installer
