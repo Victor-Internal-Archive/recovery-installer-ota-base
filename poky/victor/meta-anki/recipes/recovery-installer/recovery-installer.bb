@@ -99,7 +99,6 @@ do_install () {
     install -d ${D}/anki
     install -d ${D}/usr/bin
     install -d ${D}/usr/lib
-    install -p -m 0755 ${WORKSPACE}/anki/recovery-installer/ankidev-signed.img.gz ${D}/anki/
     install -p -m 0755 ${WORKSPACE}/anki/recovery-installer/recovery*.gz ${D}/anki/
     install -p -m 0755 ${WORKSPACE}/anki/recovery-installer/ota-code/main ${D}/usr/bin/install-recovery
     install -p -m 0755 ${WORKSPACE}/anki/recovery-installer/libs/* ${D}/usr/lib
