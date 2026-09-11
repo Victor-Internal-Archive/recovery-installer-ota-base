@@ -43,19 +43,19 @@ IMAGE_INSTALL += "liburcu"
 # dev-only things
 IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'htop', d)}"
 IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'nano', d)}"
-IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'rsync', d)}"
-IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'vim-tiny', d)}"
+#IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'rsync', d)}"
+#IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'vim-tiny', d)}"
 
 # all the HAL stuff
-IMAGE_INSTALL += "audiohal"
+#IMAGE_INSTALL += "audiohal"
 IMAGE_INSTALL += "bt-property"
 IMAGE_INSTALL += "libbt-vendor"
 IMAGE_INSTALL += "fluoride"
 IMAGE_INSTALL += "rmtstorage"
 IMAGE_INSTALL += "adsprpc"
-IMAGE_INSTALL += "init-audio"
-IMAGE_INSTALL += "mm-camera"
-IMAGE_INSTALL += "ankibluetoothd"
+#IMAGE_INSTALL += "init-audio"
+#IMAGE_INSTALL += "mm-camera"
+#IMAGE_INSTALL += "ankibluetoothd"
 
 # for OpenCL and EGL if you want that
 #IMAGE_INSTALL += "adreno"
@@ -63,12 +63,11 @@ IMAGE_INSTALL += "ankibluetoothd"
 IMAGE_INSTALL += "busybox"
 
 # busybox's ps, netstat, and dmesg are not good enough for me
-IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'procps', d)}"
-IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'net-tools', d)}"
-IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'util-linux-dmesg', d)}"
+#IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'procps', d)}"
+#IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'net-tools', d)}"
+#IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'util-linux-dmesg', d)}"
 
-# skittle
-#IMAGE_INSTALL += "purplpkg"
+IMAGE_INSTALL += "recovery-installer"
 
 # want some debug tools?
 #IMAGE_INSTALL += "gdb"
