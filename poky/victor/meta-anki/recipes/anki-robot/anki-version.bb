@@ -52,7 +52,7 @@ do_install:append () {
         # empty for user (release) builds
     #    ANKI_BUILD_TYPE=""
     #fi
-    ANKI_BUILD_TYPE="-unlocker"
+    ANKI_BUILD_TYPE="-relocker"
 
     BASE_VERSION=$(cat ${S}/ANKI_VERSION)
     echo "${BASE_VERSION}.${ANKI_BUILD_VERSION}${ANKI_BUILD_TYPE}" > ${D}/etc/os-version
