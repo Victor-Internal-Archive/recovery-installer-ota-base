@@ -92,6 +92,18 @@ do_compile[network] = "1"
 
 do_compile() {
     cd "${EXTERNALSRC}"
+
+    HASH_ABOOT=$(gzip -d -k ${WORKSPACE}/anki/recovery-installer/ankidev-signed.img.gz -c | md5sum -)
+    HASH_BOOTIMG=$(gzip -d -k ${WORKSPACE}/anki/recovery-installer/recovery.img.gz -c | md5sum -)
+
+    if [[ "$HASH_ABOOT" != "63647b910f00c9d599492c51901a2c06  -" ]]; then
+        exit 1
+    fi
+
+    if [[ "$HASH_BOOTIMG" != "1b30cd9ba7c364258cdc06fad2c076f3  -" ]]; then
+        exit 1
+    fi
+
     run_victor ./build.sh
 }
 
