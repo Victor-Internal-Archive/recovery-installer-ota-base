@@ -67,6 +67,8 @@ IMAGE_INSTALL += "busybox"
 #IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'net-tools', d)}"
 #IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'util-linux-dmesg', d)}"
 
+# Emily - I want pigz to use in the recovery installer
+IMAGE_INSTALL += "${@oe.utils.conditional('USER_BUILD', '1', '', 'pigz', d)}"
 IMAGE_INSTALL += "recovery-installer"
 
 # want some debug tools?

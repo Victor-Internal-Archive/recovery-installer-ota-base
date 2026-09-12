@@ -65,16 +65,22 @@ void set_body_leds(int success, int inRecovery)
   struct LightState ledPayload = {{0}};
 
   if (!success) {
-    ledPayload.ledColors[LED_BACKPACK_FRONT * LED_CHANEL_CT + LED0_RED] = 0xFF;
+    ledPayload.ledColors[LED_BACKPACK_BACK * LED_CHANEL_CT + LED0_RED] = 0xFF;
   }
-  else {   //2 Blues for recovery
-    ledPayload.ledColors[LED_BACKPACK_FRONT * LED_CHANEL_CT + LED0_BLUE] = 0xFF;
-    ledPayload.ledColors[LED_BACKPACK_MIDDLE * LED_CHANEL_CT + LED0_BLUE] = 0xFF;
-    if (!inRecovery) { // Rainbow lights!
+  else {   // BLUE/PINK/BLUE for trans lights
+      ledPayload.ledColors[LED_BACKPACK_FRONT * LED_CHANEL_CT + LED0_BLUE] = 0xFF;
       ledPayload.ledColors[LED_BACKPACK_FRONT * LED_CHANEL_CT + LED0_RED] = 0xFF;
-      ledPayload.ledColors[LED_BACKPACK_FRONT * LED_CHANEL_CT + LED0_GREEN] = 0xFF;
-      ledPayload.ledColors[LED_BACKPACK_MIDDLE * LED_CHANEL_CT + LED0_RED] = 0xFF;
       ledPayload.ledColors[LED_BACKPACK_MIDDLE * LED_CHANEL_CT + LED0_GREEN] = 0xFF;
+      ledPayload.ledColors[LED_BACKPACK_MIDDLE * LED_CHANEL_CT + LED0_BLUE] = 0xFF;
+      ledPayload.ledColors[LED_BACKPACK_BACK * LED_CHANEL_CT + LED0_BLUE] = 0xFF;
+      ledPayload.ledColors[LED_BACKPACK_BACK * LED_CHANEL_CT + LED0_RED] = 0xFF;
+    if (!inRecovery) {
+      ledPayload.ledColors[LED_BACKPACK_FRONT * LED_CHANEL_CT + LED0_BLUE] = 0xFF;
+      ledPayload.ledColors[LED_BACKPACK_FRONT * LED_CHANEL_CT + LED0_RED] = 0xFF;
+      ledPayload.ledColors[LED_BACKPACK_MIDDLE * LED_CHANEL_CT + LED0_GREEN] = 0xFF;
+      ledPayload.ledColors[LED_BACKPACK_MIDDLE * LED_CHANEL_CT + LED0_BLUE] = 0xFF;
+      ledPayload.ledColors[LED_BACKPACK_BACK * LED_CHANEL_CT + LED0_BLUE] = 0xFF;
+      ledPayload.ledColors[LED_BACKPACK_BACK * LED_CHANEL_CT + LED0_RED] = 0xFF;
     }
   }
 

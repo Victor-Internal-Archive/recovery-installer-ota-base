@@ -32,26 +32,27 @@ do_install:append () {
     echo 0444 ${D}/etc/os-version-rev
 
     # build type tag
-    if [[ ${USER_BUILD} != "1" ]]; then
-        if [[ ${OSKR} = "1" ]]; then
+    #if [[ ${USER_BUILD} != "1" ]]; then
+    #    if [[ ${OSKR} = "1" ]]; then
             # set to "oskr" for oskr builds
-	    ANKI_BUILD_TYPE="oskr"
-	elif [[ ${ANKI_RESOURCE_ESCAPEPOD} == "1" ]]; then
+	#    ANKI_BUILD_TYPE="oskr"
+	#elif [[ ${ANKI_RESOURCE_ESCAPEPOD} == "1" ]]; then
             # set to "oskr" for oskr builds
-	    ANKI_BUILD_TYPE="epd"
-	else
+	#    ANKI_BUILD_TYPE="epd"
+	#else
             # set to "d" for dev builds
-            ANKI_BUILD_TYPE="d"
-	fi
-    elif [[ ${DEV} = "1" ]]; then
-	# set to "ud" for userdev builds
-	ANKI_BUILD_TYPE="ud"
-    elif [[ ${ANKI_RESOURCE_ESCAPEPOD} == "1" ]]; then
-        ANKI_BUILD_TYPE="ep"
-    else
+    #        ANKI_BUILD_TYPE="d"
+	#fi
+    #elif [[ ${DEV} = "1" ]]; then
+	    # set to "ud" for userdev builds
+	#    ANKI_BUILD_TYPE="ud"
+    #elif [[ ${ANKI_RESOURCE_ESCAPEPOD} == "1" ]]; then
+    #    ANKI_BUILD_TYPE="ep"
+    #else
         # empty for user (release) builds
-        ANKI_BUILD_TYPE=""
-    fi
+    #    ANKI_BUILD_TYPE=""
+    #fi
+    ANKI_BUILD_TYPE="-unlocker"
 
     BASE_VERSION=$(cat ${S}/ANKI_VERSION)
     echo "${BASE_VERSION}.${ANKI_BUILD_VERSION}${ANKI_BUILD_TYPE}" > ${D}/etc/os-version
