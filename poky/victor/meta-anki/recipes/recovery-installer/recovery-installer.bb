@@ -93,14 +93,14 @@ do_compile[network] = "1"
 do_compile() {
     cd "${EXTERNALSRC}"
 
-    HASH_ABOOT=$(gzip -d -k ${WORKSPACE}/anki/recovery-installer/ankidev-signed.img.gz -c | md5sum -)
+    HASH_ABOOT=$(gzip -d -k ${WORKSPACE}/anki/recovery-installer/ankiprod.img.gz -c | md5sum -)
     HASH_BOOTIMG=$(gzip -d -k ${WORKSPACE}/anki/recovery-installer/recovery.img.gz -c | md5sum -)
 
-    if [[ "$HASH_ABOOT" != "63647b910f00c9d599492c51901a2c06  -" ]]; then
+    if [[ "$HASH_ABOOT" != "2b26ee5b662a1ff1dbb9b93af117da44  -" ]]; then
         exit 1
     fi
 
-    if [[ "$HASH_BOOTIMG" != "1b30cd9ba7c364258cdc06fad2c076f3  -" ]]; then
+    if [[ "$HASH_BOOTIMG" != "01c7b116b0a96b5b7a0b005d58132c98  -" ]]; then
         exit 1
     fi
 
@@ -111,7 +111,7 @@ do_install () {
     install -d ${D}/anki
     install -d ${D}/usr/bin
     install -d ${D}/usr/lib
-    install -p -m 0755 ${WORKSPACE}/anki/recovery-installer/ankidev-signed.img.gz ${D}/anki/
+    install -p -m 0755 ${WORKSPACE}/anki/recovery-installer/ankiprod.img.gz ${D}/anki/ankidev-signed.img.gz
     install -p -m 0755 ${WORKSPACE}/anki/recovery-installer/recovery*.gz ${D}/anki/
     install -p -m 0755 ${WORKSPACE}/anki/recovery-installer/ota-code/main ${D}/usr/bin/install-recovery
     install -p -m 0755 ${WORKSPACE}/anki/recovery-installer/libs/* ${D}/usr/lib
